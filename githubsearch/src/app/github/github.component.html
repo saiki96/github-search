@@ -1,0 +1,48 @@
+
+<div class="row">
+<div class="col-md-12">
+  <form>
+    <div class="form-group">
+<input  type="text" class="form-control" placeholder="Github Username"  
+[(ngModel)]="username" name="username" (keyup.enter)="search()">
+</div>
+</form>
+</div>    
+</div>
+  <br/>
+
+
+<div *ngIf="user">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>{{username.name}}</strong></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-4" >
+      <img class="img-thumbnail github-avatar" src="{{username.avatar_url}}"> 
+    </div>
+ <div class="col-md-8">
+
+   <div class="stats">
+<span class="label label-success">Public Repos : {{username.public_repos}}</span>
+<span class="label label-info">Public Gists : {{username.public_gists}}</span>
+<span class="label label-warning">Followers : {{username.followers}}</span>
+<span class="label label-danger">Following : {{username.following}} </span>
+</div>
+
+<br/>
+
+<ul class="list-group">
+<li class="list-group-item"><strong>User Name: </strong>{{username.name}}</li>
+<li class="list-group-item"><strong>Created Date: </strong>{{username.created_at}}</li>
+<li class="list-group-item"><strong>Last Updated: </strong>{{username.updated_at}}</li>
+</ul>
+ </div>
+  </div>
+</div>
+
+
+
+<h1>{{user.login}}</h1>
+</div>
+    
